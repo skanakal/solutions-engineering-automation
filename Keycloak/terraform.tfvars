@@ -1,14 +1,14 @@
 # terraform.tfvars
 
 # AWS region to deploy the instance
-region = "us-east-2"
+region = ""
 
 # AWS credentials
 aws_access_key = ""  # Replace with your AWS Access Key
 aws_secret_key = ""  # Replace with your AWS Secret Key
 
 # EC2 instance type
-instance_type = "t3.medium"
+instance_type = ""
 
 # Name of the SSH key pair to use for the EC2 instance
 key_name = ""  # Replace with your actual key pair name
