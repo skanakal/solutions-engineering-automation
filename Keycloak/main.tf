@@ -14,6 +14,8 @@ data "template_file" "keycloak" {
   vars = {
     keycloak_server_name   = "${var.instance_suffix}-keycloak.${var.aws_domain}"
     keycloak_password = var.keycloak_password
+    docker_compose_version = var.docker_compose_version
+    email                 = var.email
   }
 }
 
@@ -40,6 +42,8 @@ resource "aws_route53_record" "dns" {
   ttl     = 300
   records = [aws_instance.keycloak.public_ip]
 }
+
+# check the keycloak server rediness and print the status
 
 resource "null_resource" "keycloak_readiness_check" {
   provisioner "local-exec" {

@@ -16,7 +16,6 @@ variable "aws_secret_key" {
 
 variable "instance_type" {
   description = "EC2 instance type"
-  default     = "t3.medium"
 }
 
 variable "key_name" {
@@ -37,8 +36,7 @@ variable "security_group_ids" {
 }
 
 variable "ami_id" {
-  description = "The AMI ID to use for the instance"
-  default     = "ami-0862be96e41dcbf74" 
+  description = "The AMI ID to use for the instance" 
 }
 
 variable "aws_domain" {
@@ -52,5 +50,13 @@ variable "instance_suffix" {
 variable "keycloak_password" {
   description = "Keycloak admin password"
   type        = string
-  default     = "password"
+}
+
+variable "email" {
+  description = "email for cert verification"
+  type = string
+}
+
+variable "docker_compose_version" {
+  description = "docker-compose version" 
 }
